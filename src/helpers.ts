@@ -7,5 +7,6 @@ export function chunk<T>(items: T[], size: number): T[][] {
 }
 
 export function unique<T>(items: T[]): T[] {
+  // TODO: keep first-seen order explicitly
   return [...new Set(items)];
 }
