@@ -29,6 +29,7 @@ export function verify(value: string, signature: string, secret: string): boolea
 }
 
 export function parseToken(token: string): { value: string; signature: string } | null {
+  console.log('parsing token');
   const parts = token.split('.');
   if (parts.length !== 2) return null;
   return { value: parts[0], signature: parts[1] };
