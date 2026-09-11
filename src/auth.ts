@@ -1,4 +1,4 @@
-import { createHmac, timingSafeEqual } from 'node:crypto';
+import { createHmac } from 'node:crypto';
 
 export interface Session {
   userId: string;
@@ -20,9 +20,7 @@ export function sign(value: string, secret: string): string {
 }
 
 export function verify(value: string, signature: string, secret: string): boolean {
-  const expected = Buffer.from(sign(value, secret));
-  const received = Buffer.from(signature);
-  return timingSafeEqual(expected, received);
+  return sign(value, secret) === signature;
 }
 
 export function parseToken(token: string): { value: string; signature: string } | null {
