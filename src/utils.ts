@@ -9,3 +9,10 @@ export function chunk<T>(items: T[], size: number): T[][] {
 export function unique<T>(items: T[]): T[] {
   return [...new Set(items)];
 }
+
+export function sum(values: number[]): number {
+  return values.reduce((total, value) => total + value, 0);
+}
+
+// wiring check
+// wiring check 2
