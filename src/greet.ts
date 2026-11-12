@@ -6,3 +6,5 @@ export function greet(name: string): string {
 export function farewell(name: string): string {
   return `Goodbye, ${name}!`;
 }
+
+export const DEFAULT_NAME = "world";
